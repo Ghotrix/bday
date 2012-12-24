@@ -84,7 +84,7 @@ unsigned char *Crypt::generateRandomKey(int keyLength)
 	unsigned char *uRandKey = (unsigned char *)malloc(keyLength);
 
 	for (int i = 0; i < keyLength; i++) {
-		uRandKey[i] = rand() % 95 + 32; /* In range from 32 to 126 (only printables ) */
+		uRandKey[i] = rand() % 26 + 97; /* In range from 32 to 126 (only printables ) */
 	}
 
 	return uRandKey;
@@ -97,8 +97,8 @@ unsigned char *Crypt::generateSequentKey(int keyLength, int numSeq)
 	int result = numSeq;
 
 	for (int i = keyLength - 1; i != -1; i--) {
-		uSeqKey[i] = result % 95 + 32; /* In range from 32 to 126 (only printables ) */
-		result = result / 95;
+		uSeqKey[i] = result % 26 + 97; /* In range from 32 to 126 (only printables ) */
+		result = result / 26;
 	}
 
 	return uSeqKey;
