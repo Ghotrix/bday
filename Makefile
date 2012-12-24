@@ -1,13 +1,13 @@
 all: main
 
 main: main.o crypt.o
-	gcc -o test main.o crypt.o -lssl -lcrypto
+	g++ -o bday main.o crypt.o -lcrypto
 
-main.o: main.c
-	gcc -g -c main.c
+main.o: main.cpp
+	g++ -g -c main.cpp
 
-crypt.o: crypt.c
-	gcc -g -c crypt.c
+crypt.o: crypt.cpp
+	g++ -g -c crypt.cpp
 
 clean:
-	rm *.o test
+	rm *.o bday
